@@ -41,6 +41,12 @@ async fn main() -> std::io::Result<()> {
             //Adding the logger
             .wrap(Logger::default())
 
+            //Loading the auth route configurations
+            .configure(routes::auth_routes::config)
+            
+            //Loading the user routes
+            .configure(routes::user_routes::config)
+
             //Loading the routes configurations
             .configure(routes::blog_routes::config)
         
